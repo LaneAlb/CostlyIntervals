@@ -52,8 +52,7 @@ vector<int> costlyIntervals(int n, int k, vector<int> A) {
             // Save Valid SubArrays with Cost >= K
             if(cost >= k){
                 for(int z = s; z < rI+s-1; z++){
-                    if(r[z] == -1){r[z]+= 1 + (rI-s);}
-                    else r[z] += (rI-s);
+                    if(r[z] < (rI-s)) r[z] = (rI-s); // we only want to know the MAX sub-interval 
                 }
             }
         }
